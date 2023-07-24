@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import products from '../products';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import productContext from '../context/productContext';
 import { Link} from 'react-router-dom';
 import AddIcon from '@mui/icons-material/Add';
@@ -8,25 +8,46 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Preview } from '@mui/icons-material';
 
 const ProductDetails = () => {
     const cart = useContext(productContext);
-
     const { id } = useParams()
+    const [count, setCount] = useState(cart.cartElement[id]);
 
+    
     const productClicked = products.filter((product)=>product.id==id);
 
-    console.log(productClicked);
+    let rating = 0;
+
+    for (let i = 0; i < productClicked[0].ratings.length; i++){
+        rating += productClicked[0].ratings[i].rating;
+    }
+
+    const fullStars = Math.floor(rating/productClicked[0].ratings.length);
+    const hasHalfStar = rating - fullStars >= 0.5;
+
+    const stars = [];
+    for (let i = 0; i < fullStars; i++) {
+        stars.push(<span key={i}>&#9733;</span>); // Full star (Unicode: ★)
+    }
+
+    if (hasHalfStar) {
+        stars.push(<span key={fullStars}>&#9733;&#189;</span>); // Half star (Unicode: ★½)
+    }
 
     const styling ={
         fontSize: "0.9rem",
     }
 
-    const handleChange = (event) => {
-        let newValue = parseInt(event.target.value);
-        if (newValue => 1 && newValue <= 10){
-            cart.addToCartWithValue(id, newValue)
-        }
+    const handleChange = () => {
+        setCount((preValue) => {
+            return preValue + 1;
+        })
+    }
+
+    const handleCart = () => {
+        cart.addToCartWithValue(id, count)
     }
 
     return (
@@ -37,21 +58,26 @@ const ProductDetails = () => {
                 </div>
                 <div className="basic-details">
                     <h1>{productClicked[0].title}</h1>
+                    <p>Brand: {productClicked[0].hasOwnProperty("brand") ? productClicked[0].brand : "No Brand"}</p>
                     <p>Price: ${productClicked[0].price}.00</p>
-                    <p>Rating: {productClicked[0].ratings.length}</p>
+                    <p>{stars} | {productClicked[0].ratings.length} Ratings</p>
                 </div>
                 <div className="input-elements">
                     <button onClick={() => {
-                        cart.removeFromCart(id);
+                        setCount((preValue) => {
+                            return preValue === 0 ? preValue : preValue - 1;
+                        })
                     }}><RemoveIcon style={styling} /></button>
-                    <input type="text" value={cart.cartElement[id]} style={{border: "2px solid black"}} onChange={handleChange}/>
+                    <input type="text" value={count} style={{border: "2px solid black"}} onChange={handleChange}/>
                     <button onClick={() => {
-                        cart.addToCart(id);
+                        setCount((preValue) => {
+                            return preValue + 1;
+                        })
                     }}><AddIcon style={styling} /></button>
                 </div>
                 <div className="btn-positioning product-details-btn">
                     <a className="btn btn-dark"><ShoppingBagOutlinedIcon /> Buy Now</a>
-                    <a className="btn btn-dark"><AddShoppingCartIcon /> Add to cart</a>
+                    <a className="btn btn-dark" onClick={handleCart}><AddShoppingCartIcon /> Add to cart</a>
                 </div>
                 <p style={{ whiteSpace: 'pre-line' }} className="product-desc">
                     <h2>Description</h2>

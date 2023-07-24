@@ -4,6 +4,7 @@ const products = [
         image: "https://i.pinimg.com/236x/13/f4/47/13f447b12d02019d1c5feeeb6165fe80.jpg",
         title: "Camera",
         price: "500",
+        brand: "Nikon",
         description: `Introducing the XYZ Pro Model Z Camera, the ultimate tool for capturing life's most precious moments with unparalleled precision and clarity. Engineered with cutting-edge technology and professional-grade features, this camera is a game-changer for photographers and videographers alike.
 
         Key Features:
@@ -60,7 +61,7 @@ const products = [
         8. Extended Battery Life: The powerful battery offers extended shooting sessions, allowing you to focus on capturing the perfect shot without worrying about running out of power.
         9. Wi-Fi and Bluetooth Connectivity: Easily transfer images and videos to your smartphone or tablet for quick sharing with friends and family.
         10. Professional Ergonomics: The XYZ Pro Model Z's ergonomic design provides a comfortable grip and intuitive button layout, ensuring effortless handling during extended photo sessions.`,
-        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5}]
+        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5},{name: "Abdur Rehman", review: "This product is awesome", rating: 3.5}, {name: "Abdur Rehman", review: "This product is awesome", rating: 2.5}]
     },
     {
         id: 3,
