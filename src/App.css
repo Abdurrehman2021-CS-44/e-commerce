@@ -1,0 +1,145 @@
+.row {
+    display: flex;
+    justify-items: evenly-spaced;
+    align-items: center;
+}
+
+.card {
+    transition: 0.3s !important;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.image-wrapper {
+    height: 280px;
+    width: 280px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+.cart-numeric {
+    height: 17px;
+    width: 17px;
+    border-radius: 100%;
+    /* margin-top: 20px;
+    margin-right: 20px; */
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+    /* font-weight: bold; */
+}
+
+.cart-elements {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.cart-element {
+    width: 45%;
+    margin: 20px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 2%;
+    position: relative;
+}
+
+.cart-image-wrapper {
+    height: 130px;
+    width: 130px;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    margin-right: 25px;
+}
+
+.cart-image-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+button {
+    border-radius: 3px;
+}
+
+input {
+    width: 30px;
+    text-align: center;
+}
+
+.input-elements {
+    position: absolute;
+    bottom: 1px;
+    left: 180px;
+}
+
+.element {
+    transition: 0.4s;
+}
+
+.element:hover {
+    transform: scale(1.05);
+}
+
+.title{
+    padding: 11% 15%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4rem;
+}
+
+.total-price {
+    width: 45%;
+    margin: 40px auto;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-positioning {
+    margin: 0 28% 4%;
+}
+
+.btn-positioning a{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 12px;
+}
+
+.empty {
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: bolder;
+    width: 46%;
+    margin: 90px auto 40px;
+}
+
+.btn-positioning-empty {
+    text-align: center;
+}
+
+.btn-positioning-empty a{
+    border-radius: 12px;
+}
+
+.cart-title {
+    padding: 7% 15% 0;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+}
