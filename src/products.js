@@ -19,13 +19,20 @@ const products = [
         8. Extended Battery Life: The powerful battery offers extended shooting sessions, allowing you to focus on capturing the perfect shot without worrying about running out of power.
         9. Wi-Fi and Bluetooth Connectivity: Easily transfer images and videos to your smartphone or tablet for quick sharing with friends and family.
         10. Professional Ergonomics: The XYZ Pro Model Z's ergonomic design provides a comfortable grip and intuitive button layout, ensuring effortless handling during extended photo sessions.`,
-        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5}]
+        ratings: [
+            { name: "Abdur Rehman", review: "This product is awesome", rating: 4.5 },
+            { name: "Sarah Johnson", review: "Great quality and value for money!", rating: 5 },
+            { name: "Alex Smith", review: "Highly recommended! Fast shipping too.", rating: 4.8 },
+            { name: "Emily Lee", review: "I love this product! It exceeded my expectations.", rating: 4.7 },
+            { name: "John Doe", review: "Not bad, but could be better.", rating: 3.5 }
+        ]
     },
     {
         id: 1,
         image: "https://i.pinimg.com/236x/6d/ee/67/6dee67772c774bdf4cc14889b231cb14.jpg",
         title: "Laptop",
         price: "600",
+        brand: "HP",
         description: `Introducing the XYZ Pro Model Z Camera, the ultimate tool for capturing life's most precious moments with unparalleled precision and clarity. Engineered with cutting-edge technology and professional-grade features, this camera is a game-changer for photographers and videographers alike.
 
         Key Features:
@@ -40,7 +47,13 @@ const products = [
         8. Extended Battery Life: The powerful battery offers extended shooting sessions, allowing you to focus on capturing the perfect shot without worrying about running out of power.
         9. Wi-Fi and Bluetooth Connectivity: Easily transfer images and videos to your smartphone or tablet for quick sharing with friends and family.
         10. Professional Ergonomics: The XYZ Pro Model Z's ergonomic design provides a comfortable grip and intuitive button layout, ensuring effortless handling during extended photo sessions.`,
-        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5}]
+        ratings: [
+            { name: "Abdur Rehman", review: "This product is awesome", rating: 4.5 },
+            { name: "Sarah Johnson", review: "Great quality and value for money!", rating: 5 },
+            { name: "Alex Smith", review: "Highly recommended! Fast shipping too.", rating: 4.8 },
+            { name: "Emily Lee", review: "I love this product! It exceeded my expectations.", rating: 4.7 },
+            { name: "John Doe", review: "Not bad, but could be better.", rating: 3.5 }
+        ]
     },
     {
         id: 2,
@@ -61,7 +74,13 @@ const products = [
         8. Extended Battery Life: The powerful battery offers extended shooting sessions, allowing you to focus on capturing the perfect shot without worrying about running out of power.
         9. Wi-Fi and Bluetooth Connectivity: Easily transfer images and videos to your smartphone or tablet for quick sharing with friends and family.
         10. Professional Ergonomics: The XYZ Pro Model Z's ergonomic design provides a comfortable grip and intuitive button layout, ensuring effortless handling during extended photo sessions.`,
-        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5},{name: "Abdur Rehman", review: "This product is awesome", rating: 3.5}, {name: "Abdur Rehman", review: "This product is awesome", rating: 2.5}]
+        ratings: [
+            { name: "Abdur Rehman", review: "This product is awesome", rating: 4.5 },
+            { name: "Sarah Johnson", review: "Great quality and value for money!", rating: 5 },
+            { name: "Alex Smith", review: "Highly recommended! Fast shipping too.", rating: 4.8 },
+            { name: "Emily Lee", review: "I love this product! It exceeded my expectations.", rating: 4.7 },
+            { name: "John Doe", review: "Not bad, but could be better.", rating: 3.5 }
+        ]
     },
     {
         id: 3,
@@ -82,7 +101,13 @@ const products = [
         8. Extended Battery Life: The powerful battery offers extended shooting sessions, allowing you to focus on capturing the perfect shot without worrying about running out of power.
         9. Wi-Fi and Bluetooth Connectivity: Easily transfer images and videos to your smartphone or tablet for quick sharing with friends and family.
         10. Professional Ergonomics: The XYZ Pro Model Z's ergonomic design provides a comfortable grip and intuitive button layout, ensuring effortless handling during extended photo sessions.`,
-        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5}]
+        ratings: [
+            { name: "Abdur Rehman", review: "This product is awesome", rating: 4.5 },
+            { name: "Sarah Johnson", review: "Great quality and value for money!", rating: 5 },
+            { name: "Alex Smith", review: "Highly recommended! Fast shipping too.", rating: 4.8 },
+            { name: "Emily Lee", review: "I love this product! It exceeded my expectations.", rating: 4.7 },
+            { name: "John Doe", review: "Not bad, but could be better.", rating: 3.5 }
+        ]
     },
     {
         id: 4,
@@ -103,7 +128,13 @@ const products = [
         8. Extended Battery Life: The powerful battery offers extended shooting sessions, allowing you to focus on capturing the perfect shot without worrying about running out of power.
         9. Wi-Fi and Bluetooth Connectivity: Easily transfer images and videos to your smartphone or tablet for quick sharing with friends and family.
         10. Professional Ergonomics: The XYZ Pro Model Z's ergonomic design provides a comfortable grip and intuitive button layout, ensuring effortless handling during extended photo sessions.`,
-        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5}]
+        ratings: [
+            { name: "Abdur Rehman", review: "This product is awesome", rating: 4.5 },
+            { name: "Sarah Johnson", review: "Great quality and value for money!", rating: 5 },
+            { name: "Alex Smith", review: "Highly recommended! Fast shipping too.", rating: 4.8 },
+            { name: "Emily Lee", review: "I love this product! It exceeded my expectations.", rating: 4.7 },
+            { name: "John Doe", review: "Not bad, but could be better.", rating: 3.5 }
+        ]
     },
     {
         id: 5,
@@ -124,7 +155,13 @@ const products = [
         8. Extended Battery Life: The powerful battery offers extended shooting sessions, allowing you to focus on capturing the perfect shot without worrying about running out of power.
         9. Wi-Fi and Bluetooth Connectivity: Easily transfer images and videos to your smartphone or tablet for quick sharing with friends and family.
         10. Professional Ergonomics: The XYZ Pro Model Z's ergonomic design provides a comfortable grip and intuitive button layout, ensuring effortless handling during extended photo sessions.`,
-        ratings: [{name: "Abdur Rehman", review: "This product is awesome", rating: 4.5}]
+        ratings: [
+            { name: "Abdur Rehman", review: "This product is awesome", rating: 4.5 },
+            { name: "Sarah Johnson", review: "Great quality and value for money!", rating: 5 },
+            { name: "Alex Smith", review: "Highly recommended! Fast shipping too.", rating: 4.8 },
+            { name: "Emily Lee", review: "I love this product! It exceeded my expectations.", rating: 4.7 },
+            { name: "John Doe", review: "Not bad, but could be better.", rating: 3.5 }
+        ]
     }
 ]
 

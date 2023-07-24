@@ -33,7 +33,7 @@ const ProductDetails = () => {
     }
 
     if (hasHalfStar) {
-        stars.push(<span key={fullStars}>&#9733;&#189;</span>); // Half star (Unicode: ★½)
+        stars.push(<span key={fullStars}>&#189;</span>); // Half star (Unicode: ★½)
     }
 
     const styling ={
@@ -49,6 +49,25 @@ const ProductDetails = () => {
     const handleCart = () => {
         cart.addToCartWithValue(id, count)
     }
+
+    const getStars = (rating) => {
+        const fStars = Math.floor(rating);
+        const hStar = rating - fStars >= 0.5;
+
+        let s = []
+        for (let i = 0; i < fStars; i++){
+            s.push(<span key={i}>&#9733;</span>);
+        }
+
+        if(hStar){
+            s.push(<span key={fullStars}>&#189;</span>);
+        }
+
+        return s;
+    }
+
+    const individualRatings = productClicked[0].ratings;
+    
 
     return (
         <>
@@ -83,6 +102,25 @@ const ProductDetails = () => {
                     <h2>Description</h2>
                     {productClicked[0].description}
                 </p>
+                <div className="rating-section">
+                    <h2>Reviews</h2>
+                    {
+                        productClicked[0].ratings.map((rat)=>{
+                            return (
+                                <>
+                                    <div className="reviews">
+                                        <p className="name">{rat.name}</p>
+                                        <p className="review">{rat.review}</p>
+                                        <div className="individual-stars">
+                                            {getStars(rat.rating)}
+                                        </div>
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
+                </div>
+
             </div>
 
         </>
