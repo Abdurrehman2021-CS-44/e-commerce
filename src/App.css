@@ -197,3 +197,11 @@ input {
 .individual-stars {
     padding-left: 12px;
 }
+
+.add-product {
+    padding: 7% 25%;
+}
+
+.form-control {
+    text-align: left;
+}
