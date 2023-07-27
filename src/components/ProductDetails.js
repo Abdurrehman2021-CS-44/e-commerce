@@ -105,6 +105,7 @@ const ProductDetails = () => {
                 <div className="rating-section">
                     <h2>Reviews</h2>
                     {
+                        productClicked[0].ratings.length ?
                         productClicked[0].ratings.map((rat)=>{
                             return (
                                 <>
@@ -118,6 +119,8 @@ const ProductDetails = () => {
                                 </>
                             )
                         })
+                        :
+                        <h1 className="text-center">No reviews</h1>
                     }
                 </div>
 
