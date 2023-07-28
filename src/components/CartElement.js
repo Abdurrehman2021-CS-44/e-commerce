@@ -36,7 +36,7 @@ const CartElement = (props) => {
                         }}><AddIcon style={styling} /></button>
                     </div>
                 </div>
-                <hr style={{width: "40%", margin: "0 auto"}}/>
+                <hr style={{width: "50%", margin: "0 auto"}}/>
             </div>
         </>
     )

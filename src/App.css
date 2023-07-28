@@ -47,11 +47,11 @@
 
 .cart-elements {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .cart-element {
-    width: 45%;
+    width: 50%;
     margin: 20px auto;
     border-radius: 25px;
     overflow: hidden;
