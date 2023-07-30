@@ -31,7 +31,21 @@ const AddProduct = (props) => {
     const [product, dispatch] = useReducer(actionOnData, initialState);
 
     const handleChange = (e) => {
-        dispatch({type:"ENTER_DATA", field: e.target.name, payload: e.target.value})
+        if (e.target.type === "file") {
+            console.log("I am in");
+            let file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = () => {
+                    dispatch({type:"ENTER_DATA", field: e.target.name, payload: reader.result})
+                }
+            }
+            // dispatch({type:"ENTER_DATA", field: e.target.name, payload: e.target.files[0]})
+        } else {
+            dispatch({type:"ENTER_DATA", field: e.target.name, payload: e.target.value})
+        }
+        
         console.log(product);
     }
 
@@ -75,7 +89,7 @@ const AddProduct = (props) => {
 
                 <p>Image *</p>
                 <div className="my-3">
-                    <input name="image" type="text" className="form-control" id="link" placeholder="Add link" value={product.image} onChange={handleChange}/>
+                    <input name="image" type="file" className="form-control" id="link" placeholder="Add link" onChange={handleChange}/>
                 </div>
 
                 <div className="mb-3">
