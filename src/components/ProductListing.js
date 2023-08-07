@@ -13,7 +13,7 @@ const ProductListing = () => {
     }
 
     const handleClick = () => {
-        const searchedItems = products.filter((product) => product.title.includes(search));
+        const searchedItems = products.filter((product) => product.title.toLowerCase().includes(search.toLowerCase()));
         setAvailableProducts(searchedItems);
     }
 
