@@ -32,7 +32,6 @@ const AddProduct = (props) => {
 
     const handleChange = (e) => {
         if (e.target.type === "file") {
-            console.log("I am in");
             let file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
@@ -41,7 +40,6 @@ const AddProduct = (props) => {
                     dispatch({type:"ENTER_DATA", field: e.target.name, payload: reader.result})
                 }
             }
-            // dispatch({type:"ENTER_DATA", field: e.target.name, payload: e.target.files[0]})
         } else {
             dispatch({type:"ENTER_DATA", field: e.target.name, payload: e.target.value})
         }
@@ -87,9 +85,9 @@ const AddProduct = (props) => {
                     <input name="price" type="number" className="form-control" id="price" placeholder="Price" value={product.price} onChange={handleChange}/>
                 </div>
 
-                <p>Image *</p>
                 <div className="my-3">
-                    <input name="image" type="file" className="form-control" id="link" placeholder="Add link" onChange={handleChange}/>
+                    <label for="image" className="form-label">Image *</label>
+                    <input name="image" type="file" className="form-control" id="image" onChange={handleChange}/>
                 </div>
 
                 <div className="mb-3">

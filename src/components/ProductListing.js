@@ -5,6 +5,14 @@ const ProductListing = () => {
     return (
         <>
             <h1 className="title">Abdur Rehman's Shop</h1>
+            <div className="container">
+                <input
+                    type="text"
+                    name="search"
+                    className="form-control search-bar"
+                    placeholder="🔎 Search products"
+                />
+            </div>
             <div className="container my-5">
                 <div className="row">
                     {
