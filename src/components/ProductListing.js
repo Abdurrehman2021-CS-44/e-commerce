@@ -6,6 +6,7 @@ const ProductListing = () => {
 
     const [search, setSearch] = useState("");
     const [availableProducts, setAvailableProducts] = useState(products);
+    const [isPrice, setIsPrice] = useState(false);
 
     const handleChange = (e) => {
         const inputValue = e.target.value;
@@ -15,6 +16,19 @@ const ProductListing = () => {
     const handleClick = () => {
         const searchedItems = products.filter((product) => product.title.toLowerCase().includes(search.toLowerCase()));
         setAvailableProducts(searchedItems);
+    }
+
+    const handlePriceFilter = (e) => {
+        setIsPrice((prevVal) => !prevVal);
+        if (e.target.checked){
+            setAvailableProducts(availableProducts.sort((a,b)=>{
+                return b.price - a.price
+            }));
+        } else {
+            setAvailableProducts(availableProducts.sort((a,b)=>{
+                return a.id - b.id
+            }));
+        }
     }
 
     return (
@@ -38,7 +52,7 @@ const ProductListing = () => {
                 <h2>Filters</h2>
                 <div className="price-filter">
                     <label>Price</label>
-                    <input type="checkbox"/>
+                    <input type="checkbox" onClick={handlePriceFilter}/>
                 </div>
             </div>
             <div className="container my-5">
