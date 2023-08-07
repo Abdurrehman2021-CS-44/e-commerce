@@ -31,7 +31,14 @@ const ProductListing = () => {
                         value={search}
                         onChange={handleChange}
                     />
-                    <button className="btn btn-primary px-4" onClick={handleClick}> <i class="bi bi-search"></i> </button>
+                    <button className="btn btn-secondary px-4" onClick={handleClick}> <i class="bi bi-search"></i> </button>
+                </div>
+            </div>
+            <div className="container mt-3 filters">
+                <h2>Filters</h2>
+                <div className="price-filter">
+                    <label>Price</label>
+                    <input type="checkbox"/>
                 </div>
             </div>
             <div className="container my-5">
