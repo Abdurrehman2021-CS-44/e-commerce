@@ -6,7 +6,6 @@ const ProductListing = () => {
 
     const [search, setSearch] = useState("");
     const [availableProducts, setAvailableProducts] = useState(products);
-    const [isPrice, setIsPrice] = useState(false);
 
     const handleChange = (e) => {
         const inputValue = e.target.value;
@@ -19,8 +18,9 @@ const ProductListing = () => {
     }
 
     const handlePriceFilter = (e) => {
-        setIsPrice((prevVal) => !prevVal);
-        if (e.target.checked){
+        console.log(e.target.value);
+        const value = e.target.value;
+        if (value === "Asc"){
             setAvailableProducts(availableProducts.sort((a,b)=>{
                 return b.price - a.price
             }));
@@ -49,11 +49,12 @@ const ProductListing = () => {
                 </div>
             </div>
             <div className="container mt-3 filters">
-                <h2>Filters</h2>
-                <div className="price-filter">
-                    <label>Price</label>
-                    <input type="checkbox" onClick={handlePriceFilter}/>
-                </div>
+                <span className="ms-3">Sort By: </span>
+                <select class="form-select price-filter ms-2" aria-label="Default select example">
+                    <option value="1">Best Match</option>
+                    <option value="2">Price low to high</option>
+                    <option value="3">Price high to low</option>
+                </select>
             </div>
             <div className="container my-5">
                 <div className="row">

@@ -208,14 +208,16 @@ input {
 
 .filters {
     display: flex;
-    padding-left: 28px;
+    justify-content: baseline;
+}
+
+.filters span{
+    font-size: 25px !important;
 }
 
 .price-filter {
-    transform: scale(1.7);
-    position: relative;
-    top: 18px;
-    left: 55px;
+    width: 20%;
+    font-size: 20px !important;
 }
 
 .position-label {
