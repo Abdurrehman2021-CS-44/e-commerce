@@ -26,7 +26,7 @@ const Product = (props) => {
                     <hr />
                     <h5 className="card-title"> <b>{props.title}</b> </h5>
                     <p className="card-text">$ {props.price}.00</p>
-                    <a href="#" className="btn btn-outline-dark" onClick={handleClick}>Add to Cart {cart.cartElement[props.id] > 0 && `(${cart.cartElement[props.id]})`}</a>
+                    <button className="btn btn-outline-dark" onClick={handleClick}>Add to Cart {cart.cartElement[props.id] > 0 && `(${cart.cartElement[props.id]})`}</button>
                 </div>
             </div></Link>
         </>

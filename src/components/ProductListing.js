@@ -1,11 +1,12 @@
 import Product from "./Product";
 import products from "../products";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProductListing = () => {
 
     const [search, setSearch] = useState("");
     const [availableProducts, setAvailableProducts] = useState(products);
+    const [priceFilter, setPriceFilter] = useState(1);
 
     const handleChange = (e) => {
         const inputValue = e.target.value;
@@ -18,15 +19,22 @@ const ProductListing = () => {
     }
 
     const handlePriceFilter = (e) => {
-        console.log(e.target.value);
         const value = e.target.value;
-        if (value === "Asc"){
+        setPriceFilter(value);
+
+        if (priceFilter == 2){
+            console.log("2");
             setAvailableProducts(availableProducts.sort((a,b)=>{
-                return b.price - a.price
+                return a.price - b.price;
             }));
-        } else {
+        } else if (priceFilter == 3) {
+            console.log("3");
             setAvailableProducts(availableProducts.sort((a,b)=>{
-                return a.id - b.id
+                return b.price - a.price;
+            }));
+        }  else {
+            setAvailableProducts(availableProducts.sort((a,b)=>{
+                return a.id - b.id;
             }));
         }
     }
@@ -35,27 +43,32 @@ const ProductListing = () => {
         <>
             <h1 className="title">Abdur Rehman's Shop</h1>
             <div className="container">
-                <div class="input-group input-group-lg">
+                <div className="input-group input-group-lg">
                     <input
                         type="text"
-                        class="form-control search-bar"
+                        className="form-control search-bar"
                         aria-label="Large"
                         aria-describedby="inputGroup-sizing-sm"
                         placeholder="Search products"
                         value={search}
                         onChange={handleChange}
                     />
-                    <button className="btn btn-secondary px-4" onClick={handleClick}> <i class="bi bi-search"></i> </button>
+                    <button className="btn btn-secondary px-4" onClick={handleClick}> <i className="bi bi-search"></i> </button>
                 </div>
             </div>
-            <div className="container mt-3 filters">
-                <span className="ms-3">Sort By: </span>
-                <select class="form-select price-filter ms-2" aria-label="Default select example">
-                    <option value="1">Best Match</option>
-                    <option value="2">Price low to high</option>
-                    <option value="3">Price high to low</option>
-                </select>
-            </div>
+            {
+                search.length ?
+                <div className="container mt-3 filters">
+                    <span className="ms-3">Sort By: </span>
+                    <select className="form-select price-filter ms-2" aria-label="Default select example" onChange={handlePriceFilter}>
+                        <option value="1">Best Match</option>
+                        <option value="2">Price low to high</option>
+                        <option value="3">Price high to low</option>
+                    </select>
+                </div>
+                :
+                null
+            }
             <div className="container my-5">
                 <div className="row">
                     {

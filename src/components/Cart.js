@@ -9,8 +9,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 const Cart = () => {
     const cart = useContext(ProductContext);
 
-    const foundProducts = products.filter((product, index)=>{
-        return cart.cartElement[index] > 0 && cart.cartElement.hasOwnProperty(product.id);
+    const foundProducts = products.filter((product)=>{
+        return cart.cartElement[product.id] > 0 && cart.cartElement.hasOwnProperty(product.id);
     })
 
     const handleClick = () => {
@@ -52,7 +52,7 @@ const Cart = () => {
                 <>
                     <h2 className="empty">Your cart is currently empty. Start shopping now!</h2>
                     <div className="btn-positioning-empty">
-                        <Link to="/"> <a className="btn btn-dark btn-lg"><AddShoppingCartIcon /> Go Shopping</a> </Link>
+                        <Link to="/"> <button className="btn btn-dark btn-lg"><AddShoppingCartIcon /> Go Shopping</button> </Link>
                     </div>
                 </>
             }

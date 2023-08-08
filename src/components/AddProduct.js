@@ -24,7 +24,7 @@ const AddProduct = (props) => {
     const initialState = {
         title: "",
         brand: "",
-        price: null,
+        price: "",
         image: null,
         description: ""
     }
@@ -73,25 +73,25 @@ const AddProduct = (props) => {
                 <h1 className="display-4 text-center">Add Product</h1>
 
                 <div className="my-3">
-                    <label for="title" className="form-label">Title/Name *</label>
+                    <label htmlFor="title" className="form-label">Title/Name *</label>
                     <input name="title" type="text" className="form-control text-left" id="title" placeholder="Title" value={product.title} onChange={handleChange}/>
                 </div>
                 <div className="my-3">
-                    <label for="brand" className="form-label">Brand *</label>
+                    <label htmlFor="brand" className="form-label">Brand *</label>
                     <input name="brand" type="text" className="form-control" id="brand" placeholder="Brand" value={product.brand} onChange={handleChange}/>
                 </div>
                 <div className="my-3">
-                    <label for="price" className="form-label">Price *</label>
+                    <label htmlFor="price" className="form-label">Price *</label>
                     <input name="price" type="number" className="form-control" id="price" placeholder="Price" value={product.price} onChange={handleChange}/>
                 </div>
 
                 <div className="my-3">
-                    <label for="image" className="form-label">Image *</label>
+                    <label htmlFor="image" className="form-label">Image *</label>
                     <input name="image" type="file" className="form-control" id="image" onChange={handleChange}/>
                 </div>
 
                 <div className="mb-3">
-                    <label for="description" className="form-label">Description *</label>
+                    <label htmlFor="description" className="form-label">Description *</label>
                     <textarea name="description" className="form-control" id="description" rows="3" value={product.description} onChange={handleChange}></textarea>
                 </div>
                 <button className="btn btn-outline-dark btn-lg w-100" onClick={handleClick} >Add Product</button>
