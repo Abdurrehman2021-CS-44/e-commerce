@@ -88,6 +88,8 @@ input {
 }
 
 .element {
+    width: 80%;
+    margin: 0 auto;
     transition: 0.4s;
 }
 

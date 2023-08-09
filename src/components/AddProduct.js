@@ -94,7 +94,7 @@ const AddProduct = (props) => {
                     <label htmlFor="description" className="form-label">Description *</label>
                     <textarea name="description" className="form-control" id="description" rows="3" value={product.description} onChange={handleChange}></textarea>
                 </div>
-                <button className="btn btn-outline-dark btn-lg w-100" onClick={handleClick} >Add Product</button>
+                <button className="btn btn-dark btn-lg w-100" onClick={handleClick} >Add Product</button>
             </div>
         </>
     )
