@@ -15,28 +15,27 @@ const ProductListing = () => {
 
     const handleClick = () => {
         const searchedItems = products.filter((product) => product.title.toLowerCase().includes(search.toLowerCase()));
-        setAvailableProducts(searchedItems);
+
+        console.log(availableProducts);
+
+        if (priceFilter == 2){
+            setAvailableProducts(searchedItems.sort((a,b)=>{
+                return a.price - b.price;
+            }));
+        } else if (priceFilter == 3) {
+            setAvailableProducts(searchedItems.sort((a,b)=>{
+                return b.price - a.price;
+            }));
+        }  else {
+            setAvailableProducts(searchedItems.sort((a,b)=>{
+                return a.id - b.id;
+            }));
+        }
     }
 
     const handlePriceFilter = (e) => {
         const value = e.target.value;
         setPriceFilter(value);
-
-        if (priceFilter == 2){
-            console.log("2");
-            setAvailableProducts(availableProducts.sort((a,b)=>{
-                return a.price - b.price;
-            }));
-        } else if (priceFilter == 3) {
-            console.log("3");
-            setAvailableProducts(availableProducts.sort((a,b)=>{
-                return b.price - a.price;
-            }));
-        }  else {
-            setAvailableProducts(availableProducts.sort((a,b)=>{
-                return a.id - b.id;
-            }));
-        }
     }
 
     return (
@@ -56,19 +55,14 @@ const ProductListing = () => {
                     <button className="btn btn-secondary px-4" onClick={handleClick}> <i className="bi bi-search"></i> </button>
                 </div>
             </div>
-            {
-                search.length ?
-                <div className="container mt-3 filters">
-                    <span className="ms-3">Sort By: </span>
-                    <select className="form-select price-filter ms-2" aria-label="Default select example" onChange={handlePriceFilter}>
-                        <option value="1">Best Match</option>
-                        <option value="2">Price low to high</option>
-                        <option value="3">Price high to low</option>
-                    </select>
-                </div>
-                :
-                null
-            }
+            <div className="container mt-3 filters">
+                <span className="ms-3">Sort By: </span>
+                <select className="form-select price-filter ms-2" aria-label="Default select example" onChange={handlePriceFilter}>
+                    <option value="1">Best Match</option>
+                    <option value="2">Price low to high</option>
+                    <option value="3">Price high to low</option>
+                </select>
+            </div>
             <div className="container my-5">
                 <div className="row">
                     {
